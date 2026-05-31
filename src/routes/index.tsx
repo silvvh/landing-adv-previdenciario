@@ -1,29 +1,67 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/landing/Navbar";
+import { Hero } from "@/components/landing/Hero";
+import { TrustBar } from "@/components/landing/TrustBar";
+import { Services } from "@/components/landing/Services";
+import { Authority } from "@/components/landing/Authority";
+import { Process } from "@/components/landing/Process";
+import { Differentials } from "@/components/landing/Differentials";
+import { Testimonials } from "@/components/landing/Testimonials";
+import { Faq } from "@/components/landing/Faq";
+import { FinalCta } from "@/components/landing/FinalCta";
+import { Footer } from "@/components/landing/Footer";
+import { FloatingWhatsApp } from "@/components/landing/FloatingWhatsApp";
+
+const TITLE = "Advocacia Previdenciária | Marcondes & Associados";
+const DESCRIPTION =
+  "Especialistas em Direito Previdenciário. Planejamento, revisão e concessão de benefícios do INSS com atendimento digital em todo o Brasil.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LegalService",
+          name: "Marcondes & Associados",
+          description: DESCRIPTION,
+          areaServed: "BR",
+          serviceType: "Direito Previdenciário",
+        }),
+      },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="min-h-screen bg-background text-foreground">
+      <Navbar />
+      <Hero />
+      <TrustBar />
+      <Services />
+      <Authority />
+      <Process />
+      <Differentials />
+      <Testimonials />
+      <Faq />
+      <FinalCta />
+      <Footer />
+      <FloatingWhatsApp />
+    </main>
   );
 }
