@@ -1,5 +1,9 @@
 {
-  "version": 2,
-  "buildCommand": "bun run build:vercel",
-  "outputDirectory": ".vercel/output"
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "outputDirectory": "dist/client"
 }
