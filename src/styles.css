@@ -48,8 +48,8 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.18 0.02 260);
 
-  /* Brand royal blue */
-  --brand: oklch(0.42 0.22 265);
+  /* Brand navy #0f172a */
+  --brand: oklch(0.23 0.04 260);
   --brand-foreground: oklch(0.985 0.002 90);
 
   /* Gold accent #c2a378 */
