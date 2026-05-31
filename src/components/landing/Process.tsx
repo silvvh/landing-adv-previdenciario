@@ -8,7 +8,7 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="processo" className="py-24 md:py-32 bg-background">
+    <section id="processo" className="py-12 md:py-16 bg-background">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16 md:mb-20 max-w-2xl mx-auto">
           <span className="text-xs font-semibold tracking-[0.22em] text-accent uppercase mb-4 block">
@@ -19,9 +19,9 @@ export function Process() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-5 gap-px bg-border border border-border">
+        <div className="grid sm:grid-cols-2 md:grid-cols-5 gap-6 md:gap-8">
           {steps.map((s) => (
-            <div key={s.n} className="bg-card p-8">
+            <div key={s.n} className="bg-card border border-border p-6 hover:-translate-y-1 hover:shadow-md transition-all rounded-sm">
               <div className="font-serif text-accent text-2xl mb-4">{s.n}</div>
               <h3 className="text-base font-medium text-brand mb-3 leading-snug">{s.t}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">{s.d}</p>

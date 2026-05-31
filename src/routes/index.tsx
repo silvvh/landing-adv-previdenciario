@@ -10,7 +10,9 @@ import { Testimonials } from "@/components/landing/Testimonials";
 import { Faq } from "@/components/landing/Faq";
 import { FinalCta } from "@/components/landing/FinalCta";
 import { Footer } from "@/components/landing/Footer";
-import { FloatingWhatsApp } from "@/components/landing/FloatingWhatsApp";
+import { useState } from "react";
+import { BookingModal } from "@/components/scheduling/BookingModal";
+import { ChatWidget } from "@/components/chat/ChatWidget";
 
 const TITLE = "Advocacia Previdenciária | Marcondes & Associados";
 const DESCRIPTION =
@@ -28,6 +30,8 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
+      { property: "og:image", content: "/og-image.png" },
+      { name: "twitter:image", content: "/og-image.png" },
     ],
     links: [{ rel: "canonical", href: "/" }],
     scripts: [
@@ -48,10 +52,12 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+
   return (
     <main className="min-h-screen bg-background text-foreground">
-      <Navbar />
-      <Hero />
+      <Navbar onOpenBooking={() => setIsBookingOpen(true)} />
+      <Hero onOpenBooking={() => setIsBookingOpen(true)} />
       <TrustBar />
       <Services />
       <Authority />
@@ -59,9 +65,10 @@ function Index() {
       <Differentials />
       <Testimonials />
       <Faq />
-      <FinalCta />
+      <FinalCta onOpenBooking={() => setIsBookingOpen(true)} />
       <Footer />
-      <FloatingWhatsApp />
+      <ChatWidget />
+      <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
     </main>
   );
 }

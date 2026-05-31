@@ -10,7 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
+import { reportMarcondesError } from "../lib/marcondes-error-reporting";
 
 function NotFoundComponent() {
   return (
@@ -38,7 +38,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+    reportMarcondesError(error, { boundary: "tanstack_root_error_component" });
   }, [error]);
 
   return (
@@ -77,20 +77,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Previdência Premium crafts high-conversion landing pages for Brazilian Social Security Law Firms." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Previdência Premium crafts high-conversion landing pages for Brazilian Social Security Law Firms." },
+      { title: "Marcondes & Associados | Advocacia Previdenciária" },
+      { name: "description", content: "Marcondes & Associados - Advocacia Previdenciária de Alta Complexidade. Garantimos o seu benefício com estratégia e rigor técnico em todo o Brasil." },
+      { name: "author", content: "Marcondes & Associados" },
+      { property: "og:title", content: "Marcondes & Associados | Advocacia Previdenciária" },
+      { property: "og:description", content: "Advocacia Previdenciária de Alta Complexidade. Garantimos o seu benefício com estratégia e rigor técnico em todo o Brasil." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "Previdência Premium crafts high-conversion landing pages for Brazilian Social Security Law Firms." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/009df949-a9ae-47b6-8259-a55630cd0fae/id-preview-04a0b18c--283b4d36-1c9a-4ae9-9226-edaaf9d1474a.lovable.app-1780192706240.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/009df949-a9ae-47b6-8259-a55630cd0fae/id-preview-04a0b18c--283b4d36-1c9a-4ae9-9226-edaaf9d1474a.lovable.app-1780192706240.png" },
+      { property: "og:image", content: "/og-image.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Marcondes & Associados | Advocacia Previdenciária" },
+      { name: "twitter:description", content: "Advocacia Previdenciária de Alta Complexidade. Garantimos o seu benefício com estratégia e rigor técnico em todo o Brasil." },
+      { name: "twitter:image", content: "/og-image.png" },
     ],
     links: [
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "shortcut icon", href: "/favicon.ico" },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },

@@ -9,7 +9,7 @@ const items = [
 
 export function Differentials() {
   return (
-    <section className="py-24 md:py-32 bg-brand text-brand-foreground">
+    <section className="py-12 md:py-16 bg-brand text-brand-foreground">
       <div className="max-w-6xl mx-auto px-6">
         <div className="mb-16 md:mb-20 max-w-2xl">
           <span className="text-xs font-semibold tracking-[0.22em] text-accent uppercase mb-4 block">
@@ -20,9 +20,9 @@ export function Differentials() {
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {items.map((i) => (
-            <div key={i.t} className="bg-brand p-8 md:p-10 hover:bg-white/[0.03] transition-colors">
+            <div key={i.t} className="bg-brand/40 border border-white/10 p-8 md:p-10 hover:bg-white/[0.03] transition-all hover:-translate-y-1 rounded-sm shadow-sm">
               <div className="size-1.5 bg-accent mb-6" />
               <h3 className="font-serif text-xl mb-3">{i.t}</h3>
               <p className="text-sm text-brand-foreground/65 leading-relaxed">{i.d}</p>

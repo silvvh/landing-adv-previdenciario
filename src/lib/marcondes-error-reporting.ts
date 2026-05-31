@@ -1,26 +1,26 @@
-type LovableErrorOptions = {
+type MarcondesErrorOptions = {
   mechanism?: "manual" | "onerror" | "unhandledrejection" | "react_error_boundary";
   handled?: boolean;
   severity?: "error" | "warning" | "info";
 };
 
-type LovableEvents = {
+type MarcondesEvents = {
   captureException?: (
     error: unknown,
     context?: Record<string, unknown>,
-    options?: LovableErrorOptions,
+    options?: MarcondesErrorOptions,
   ) => void;
 };
 
 declare global {
   interface Window {
-    __lovableEvents?: LovableEvents;
+    __marcondesEvents?: MarcondesEvents;
   }
 }
 
-export function reportLovableError(error: unknown, context: Record<string, unknown> = {}) {
+export function reportMarcondesError(error: unknown, context: Record<string, unknown> = {}) {
   if (typeof window === "undefined") return;
-  window.__lovableEvents?.captureException?.(
+  window.__marcondesEvents?.captureException?.(
     error,
     {
       source: "react_error_boundary",

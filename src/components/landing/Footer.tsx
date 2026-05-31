@@ -6,9 +6,12 @@ export function Footer() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between gap-12 mb-12">
           <div className="max-w-xs">
-            <span className="font-serif text-lg font-medium tracking-tight text-brand uppercase block mb-6">
-              {FIRM_NAME}
-            </span>
+            <div className="flex items-center gap-3 mb-6">
+              <img src="/logo.png" alt="Logo Marcondes" className="h-9 w-9 rounded-sm border border-accent/20 object-cover" />
+              <span className="font-serif text-lg font-medium tracking-tight text-brand uppercase">
+                {FIRM_NAME}
+              </span>
+            </div>
             <p className="text-xs text-muted-foreground leading-relaxed">
               Excelência jurídica em Direito Previdenciário. Atendimento
               especializado em todo o território nacional por meio de plataforma

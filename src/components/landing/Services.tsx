@@ -39,7 +39,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="especialidades" className="py-24 md:py-32 bg-background">
+    <section id="especialidades" className="py-12 md:py-16 bg-background">
       <div className="max-w-6xl mx-auto px-6">
         <div className="mb-16 md:mb-20 max-w-2xl">
           <span className="text-xs font-semibold tracking-[0.22em] text-accent uppercase mb-4 block">
@@ -51,11 +51,11 @@ export function Services() {
           <div className="h-px w-12 bg-accent mt-6" />
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {services.map((s) => (
             <article
               key={s.title}
-              className="bg-card p-8 md:p-10 hover:bg-secondary/60 transition-colors group"
+              className="bg-card border border-border p-8 md:p-10 hover:border-accent/40 hover:shadow-md transition-all rounded-sm group"
             >
               <div className="size-7 border-t border-l border-accent mb-6 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
               <h3 className="text-lg md:text-xl font-medium text-brand mb-3">{s.title}</h3>

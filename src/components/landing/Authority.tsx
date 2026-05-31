@@ -10,7 +10,7 @@ const credentials = [
 
 export function Authority() {
   return (
-    <section id="escritorio" className="py-24 md:py-32 bg-secondary/40">
+    <section id="escritorio" className="py-12 md:py-16 bg-secondary/40">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
           <div className="w-full md:w-1/2">

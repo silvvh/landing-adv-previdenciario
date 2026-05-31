@@ -21,7 +21,7 @@ const items = [
 
 export function Testimonials() {
   return (
-    <section className="py-24 md:py-32 bg-secondary/40">
+    <section className="py-12 md:py-16 bg-secondary/40">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16 md:mb-20 max-w-2xl mx-auto">
           <span className="text-xs font-semibold tracking-[0.22em] text-accent uppercase mb-4 block">

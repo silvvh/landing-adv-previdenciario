@@ -1,9 +1,9 @@
 import { WHATSAPP_URL } from "./constants";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 
-export function FinalCta() {
+export function FinalCta({ onOpenBooking }: { onOpenBooking?: () => void }) {
   return (
-    <section className="py-24 md:py-32 bg-brand text-brand-foreground relative overflow-hidden">
+    <section className="py-12 md:py-16 bg-brand text-brand-foreground relative overflow-hidden">
       <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
         <span className="text-xs font-semibold tracking-[0.22em] text-accent uppercase mb-6 block">
           Solicite sua análise
@@ -25,14 +25,12 @@ export function FinalCta() {
             <WhatsAppIcon className="size-5" />
             Conversar via WhatsApp
           </a>
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="py-4 px-8 border border-white/25 rounded-sm font-medium hover:bg-white/5 transition-colors"
+          <button
+            onClick={onOpenBooking}
+            className="py-4 px-8 border border-white/25 rounded-sm font-medium hover:bg-white/5 transition-colors cursor-pointer"
           >
             Agendar uma Reunião
-          </a>
+          </button>
         </div>
         <p className="mt-10 text-brand-foreground/50 text-xs uppercase tracking-[0.18em]">
           Atendimento em todo o território nacional
